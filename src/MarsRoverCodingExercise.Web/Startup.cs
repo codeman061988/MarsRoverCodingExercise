@@ -6,6 +6,7 @@ using MarsRoverCodingExercise.Core.Interfaces;
 using MarsRoverCodingExercise.Infrastructure.Clients;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -90,6 +91,12 @@ namespace MarsRoverCodingExercise.Web
             services.AddMvcCore(options => options.EnableEndpointRouting = false)
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>())
                 .AddApiExplorer();
+
+            services.AddApiVersioning(options =>
+            {
+                options.ApiVersionReader = new HeaderApiVersionReader("api-version");
+                options.ReportApiVersions = true;
+            });
 
             // API DI Mapping
 
