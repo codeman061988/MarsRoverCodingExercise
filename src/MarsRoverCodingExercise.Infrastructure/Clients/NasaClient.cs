@@ -1,10 +1,12 @@
-﻿using System;
+﻿using MarsRoverCodingExercise.Core.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace MarsRoverCodingExercise.Infrastructure.Clients
 {
-    class NasaClient
+    /// <inheritdoc />
+    public class NasaClient : INasaClient
     {
 
     }
