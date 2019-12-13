@@ -1,6 +1,8 @@
-﻿using System;
+﻿using MarsRoverCodingExercise.Core.Models.Nasa;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace MarsRoverCodingExercise.Core.Interfaces
 {
@@ -9,6 +11,12 @@ namespace MarsRoverCodingExercise.Core.Interfaces
     /// </summary>
     public interface INasaClient
     {
-
+        /// <summary>
+        /// Retrieves photos from a given mars rover by the rover name and date passed in
+        /// </summary>
+        /// <param name="roverName"></param>
+        /// <param name="dateStr"></param>
+        /// <returns></returns>
+        Task<NasaApiResponse> GetMarsRoverPhotosByDate(string roverName, string dateStr);
     }
 }
