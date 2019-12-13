@@ -23,5 +23,10 @@ namespace MarsRoverCodingExercise.Core.Settings
         /// API key, by which NASA API calls are made
         /// </summary>
         public string ApiKey { get; set; } = string.Empty;
+
+        /// <summary>
+        /// API Endpoints
+        /// </summary>
+        public NasaApiEndpoints Endpoints { get; set; } = null!;
     }
 }
