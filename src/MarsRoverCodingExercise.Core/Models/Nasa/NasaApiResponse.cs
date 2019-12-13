@@ -7,7 +7,7 @@ namespace MarsRoverCodingExercise.Core.Models.Nasa
     /// <summary>
     /// Represents an API response wrapper object, expected when calling a NASA API
     /// </summary>
-    public class ApiResponse
+    public class NasaApiResponse
     {
         /// <summary>
         /// List of photos returned when calling the mars-rover API
