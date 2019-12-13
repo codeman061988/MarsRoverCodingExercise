@@ -124,7 +124,7 @@ namespace MarsRoverCodingExercise.Web
             });
             app.UseCors("CorsPolicy");
             app.UseMvcWithDefaultRoute();
-            app.UseDefaultFiles();
+            app.UseStaticFiles();
         }
     }
 }
