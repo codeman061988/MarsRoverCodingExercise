@@ -112,7 +112,7 @@ namespace MarsRoverCodingExercise.Web
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Moccasin Creek Kennel API Documentation");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Mars Rover Coding Exercise API Documentation");
                 c.DocExpansion(DocExpansion.None);
             });
             app.UseCors("CorsPolicy");
