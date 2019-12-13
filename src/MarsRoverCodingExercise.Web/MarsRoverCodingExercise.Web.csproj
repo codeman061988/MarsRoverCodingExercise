@@ -15,4 +15,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MarsRoverCodingExercise.Core\MarsRoverCodingExercise.Core.csproj" />
+    <ProjectReference Include="..\MarsRoverCodingExercise.Infrastructure\MarsRoverCodingExercise.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
