@@ -4,6 +4,8 @@ using FluentValidation.AspNetCore;
 using Flurl.Http.Configuration;
 using MarsRoverCodingExercise.Core.Interfaces;
 using MarsRoverCodingExercise.Infrastructure.Clients;
+using MarsRoverCodingExercise.Web.Interfaces;
+using MarsRoverCodingExercise.Web.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -99,6 +101,7 @@ namespace MarsRoverCodingExercise.Web
             });
 
             // API DI Mapping
+            services.AddScoped<IMarsPhotoService, MarsPhotoService>();
 
             // Core DI Mapping
 
