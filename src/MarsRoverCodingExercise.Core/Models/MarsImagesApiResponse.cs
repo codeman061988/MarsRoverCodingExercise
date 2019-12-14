@@ -10,8 +10,17 @@ namespace MarsRoverCodingExercise.Core.Models
     public class MarsImagesApiResponse
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="MarsImagesApiResponse"/> class
+        /// </summary>
+        /// <param name="marsImages"></param>
+        public MarsImagesApiResponse(List<MarsImage> marsImages)
+        {
+            MarsImages = marsImages;
+        }
+
+        /// <summary>
         /// Represets a collection of mars images
         /// </summary>
-        public List<MarsImage> MarsImages { get; } = null!;
+        public List<MarsImage> MarsImages { get; private set; } = null!;
     }
 }

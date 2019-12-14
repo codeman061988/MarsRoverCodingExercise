@@ -13,7 +13,7 @@ namespace MarsRoverCodingExercise.Core.Models.Nasa
         /// <summary>
         /// Rover Id
         /// </summary>
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// Name of the Rover (i.e. Curiosity)
@@ -24,13 +24,13 @@ namespace MarsRoverCodingExercise.Core.Models.Nasa
         /// Rover landing date
         /// </summary>
         [JsonProperty("landing_date")]
-        public DateTimeOffset LandingDate { get; set; }
+        public string LandingDate { get; set; } = string.Empty;
 
         /// <summary>
         /// Rover Launch date
         /// </summary>
         [JsonProperty("launch_date")]
-        public DateTimeOffset LaunchDate { get; set; }
+        public string LaunchDate { get; set; } = string.Empty;
 
         /// <summary>
         /// Rover operational status
@@ -41,23 +41,23 @@ namespace MarsRoverCodingExercise.Core.Models.Nasa
         /// Mission MAX sol
         /// </summary>
         [JsonProperty("max_sol")]
-        public long MaxSol { get; set; }
+        public long? MaxSol { get; set; }
 
         /// <summary>
         /// Mission Max date
         /// </summary>
         [JsonProperty("max_date")]
-        public DateTimeOffset MaxDate { get; set; }
+        public string MaxDate { get; set; } = string.Empty;
 
         /// <summary>
         /// Total photos taken by the rover
         /// </summary>
         [JsonProperty("total_photos")]
-        public long TotalPhotos { get; set; }
+        public long? TotalPhotos { get; set; }
 
         /// <summary>
         /// List of cameras used by the rover
         /// </summary>
-        public List<CameraElement> Cameras { get; } = null!;
+        public List<Camera> Cameras { get; set; }
     }
 }

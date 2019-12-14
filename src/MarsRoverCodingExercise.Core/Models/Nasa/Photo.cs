@@ -13,17 +13,17 @@ namespace MarsRoverCodingExercise.Core.Models.Nasa
         /// <summary>
         /// Photo Id
         /// </summary>
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// Mission SOL
         /// </summary>
-        public long Sol { get; set; }
+        public long? Sol { get; set; }
 
         /// <summary>
         /// Camera used to take photos
         /// </summary>
-        public PhotoCamera Camera { get; set; } = null!;
+        public Camera Camera { get; set; } = null!;
 
         /// <summary>
         /// Web image source
@@ -35,7 +35,7 @@ namespace MarsRoverCodingExercise.Core.Models.Nasa
         /// Equivalent earth date
         /// </summary>
         [JsonProperty("earth_date")]
-        public DateTimeOffset EarthDate { get; set; }
+        public string EarthDate { get; set; } = string.Empty;
 
         /// <summary>
         /// Rover responsible for taking the photos 

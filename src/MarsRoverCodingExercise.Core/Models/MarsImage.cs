@@ -17,6 +17,6 @@ namespace MarsRoverCodingExercise.Core.Models
         /// <summary>
         /// The local (app) URL, which represents where the image is stored locally
         /// </summary>
-        public Uri LocalUrl { get; set; } = null!;
+        public string LocalUrl { get; set; } = null!;
     }
 }

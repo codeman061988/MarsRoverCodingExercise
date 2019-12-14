@@ -12,7 +12,7 @@ namespace MarsRoverCodingExercise.Core.Models.Nasa
         /// <summary>
         /// List of photos returned when calling the mars-rover API
         /// </summary>
-        public List<Photo> Photos { get; } = null!;
+        public List<Photo> Photos { get; set; }
 
         /// <summary>
         /// In applicable cases, an error object returned from any given NASA API
