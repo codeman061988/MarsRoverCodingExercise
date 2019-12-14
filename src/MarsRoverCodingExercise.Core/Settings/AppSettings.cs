@@ -12,6 +12,6 @@ namespace MarsRoverCodingExercise.Core.Settings
         /// <summary>
         /// Mapped Nasa settings from appsettings.json
         /// </summary>
-        public Nasa Nasa { get; set; } = null!;
+        public NasaServices NasaServices { get; set; } = null!;
     }
 }

@@ -7,7 +7,7 @@ namespace MarsRoverCodingExercise.Core.Settings
     /// <summary>
     /// Strongly typed model of NASA settings from appsettings.json
     /// </summary>
-    public class Nasa
+    public class NasaServices
     {
         /// <summary>
         /// Account email, by which API key was registered
