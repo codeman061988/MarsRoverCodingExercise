@@ -3,6 +3,7 @@ using System.IO;
 using FluentValidation.AspNetCore;
 using Flurl.Http.Configuration;
 using MarsRoverCodingExercise.Core.Interfaces;
+using MarsRoverCodingExercise.Core.Settings;
 using MarsRoverCodingExercise.Infrastructure.Clients;
 using MarsRoverCodingExercise.Web.Interfaces;
 using MarsRoverCodingExercise.Web.Services;
@@ -104,7 +105,7 @@ namespace MarsRoverCodingExercise.Web
             services.AddScoped<IMarsPhotoService, MarsPhotoService>();
 
             // Core DI Mapping
-
+            services.Configure<AppSettings>(_config);
 
             // Infrastructure DI Mapping
             services.AddSingleton<IFlurlClientFactory, PerBaseUrlFlurlClientFactory>();
