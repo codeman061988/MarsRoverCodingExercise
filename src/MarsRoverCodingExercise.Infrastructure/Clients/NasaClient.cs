@@ -26,7 +26,7 @@ namespace MarsRoverCodingExercise.Infrastructure.Clients
             if (flurlClientFactory == null) { throw new ArgumentNullException(nameof(flurlClientFactory)); }
 
             _settings = settings.Value;
-            _flurlClient = flurlClientFactory.Get(_settings.Nasa.Endpoints.BaseUrl);
+            _flurlClient = flurlClientFactory.Get(_settings.NasaServices.Endpoints.BaseUrl);
         }
 
         /// <inheritdoc />
@@ -34,17 +34,23 @@ namespace MarsRoverCodingExercise.Infrastructure.Clients
         {
             // Decalre new variable, whos value is that of the results of the Flurl Http call
             var response = await _flurlClient
-                .Request(_settings.Nasa.Endpoints.MarsPhotosUri, "rovers", roverName, "photos")
+                .Request(_settings.NasaServices.Endpoints.MarsPhotosUri, "rovers", roverName, "photos")
                 .SetQueryParams(new
                 {
                     earth_date = dateStr,
-                    api_key = _settings.Nasa.ApiKey
+                    api_key = _settings.NasaServices.ApiKey
                 })
                 .GetAsync()
                 .ReceiveJson<NasaApiResponse>()
                 .ConfigureAwait(false);
 
             return response;
+        }
+
+        /// <inheritdoc />
+        public async Task<string> DownloadFiles(string source, string dest)
+        {
+            return await source.DownloadFileAsync(dest).ConfigureAwait(false);
         }
 
     }

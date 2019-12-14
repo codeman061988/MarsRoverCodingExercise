@@ -18,5 +18,13 @@ namespace MarsRoverCodingExercise.Core.Interfaces
         /// <param name="dateStr"></param>
         /// <returns></returns>
         Task<NasaApiResponse> GetMarsRoverPhotosByDate(string roverName, string dateStr);
+
+        /// <summary>
+        /// Downloads a file from the given source, to the given destination
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="dest"></param>
+        /// <returns></returns>
+        Task<string> DownloadFiles(string source, string dest);
     }
 }
