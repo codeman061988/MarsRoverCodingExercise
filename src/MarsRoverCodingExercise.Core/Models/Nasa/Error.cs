@@ -12,11 +12,11 @@ namespace MarsRoverCodingExercise.Core.Models.Nasa
         /// <summary>
         /// The error code
         /// </summary>
-        public string Code { get; set; } = string.Empty;
+        public string? Code { get; set; }
 
         /// <summary>
         /// A message that briefly describes the error code returneds
         /// </summary>
-        public string Message { get; set; } = string.Empty;
+        public string? Message { get; set; }
     }
 }
