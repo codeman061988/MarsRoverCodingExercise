@@ -101,7 +101,8 @@ namespace MarsRoverCodingExercise.Web.Services
         {
             // Get distination path
             var webRoot = _env.WebRootPath;
-            var destPath = $"{webRoot.Replace("\\","/",StringComparison.InvariantCulture)}/images/{roverName}/{formattedDate}/";
+            var destUri = $"/images/{roverName}/{formattedDate}/";
+            var destPath = $"{webRoot.Replace("\\","/",StringComparison.InvariantCulture)}{destUri}";
 
             // Create date-based folder for images
             Directory.CreateDirectory(destPath);
@@ -123,7 +124,15 @@ namespace MarsRoverCodingExercise.Web.Services
                 var result =
                     await _nasaClient.DownloadFiles(url.OriginalString, destPath).ConfigureAwait(false);
 
-                outputUrls.Add(result);
+                // Extract Image name with extension from result hard disk path
+                var imageName = 
+                    Path.GetFileName(result
+                    .Replace("/","\\", StringComparison.InvariantCulture)
+                    .Replace("//","/", StringComparison.InvariantCulture));
+
+                var outputUri = $"{destUri}{imageName}";
+
+                outputUrls.Add(outputUri);
             }
             return outputUrls;
         }
