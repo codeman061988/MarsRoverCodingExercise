@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+.jumbotron {
+  margin-top: 20px;
+}
+
+.img-grid-img {
+  max-width: 200px;
+  max-height: 200px;
+}
