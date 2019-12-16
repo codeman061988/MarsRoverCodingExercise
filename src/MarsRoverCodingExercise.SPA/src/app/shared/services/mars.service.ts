@@ -16,7 +16,7 @@ export class MarsService {
   constructor(private http: HttpClient) { }
 
   /**
-* Retrieves images takes by a specified mars rover, by the name of the mars rover name
+* Retrieves images captured by a specified mars rover, by the name of the mars rover
 * @param roverName
 */
   public getPhotosByRoverName(roverName: string): Observable<ImageResponse> {
