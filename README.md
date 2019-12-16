@@ -17,8 +17,7 @@ by Cody Hicks
 7) Click Execute.. the process may take a few minutes to complete, depending on which rover was chosen
 
 ### Results
-A response payload will eventully display, showing the path in which the images were placed.
+A response payload will eventually display, showing the path in which the images were placed.
 
 ### TODO
-- For now, the image paths are paths to a location within the project directory (wwwroot). I need to clean this up because I would like to come back and add an Angular SPA in the .SPA project to consume the web service and then display the images.
-- Go to add some tests later on in a seperate csproj.
+- Go to add some tests later on in a separate csproj.
