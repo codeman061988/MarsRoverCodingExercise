@@ -22,7 +22,7 @@ by Cody Hicks
 3) Once node is installed, you'll want to go ahead and install Angular CLI by opening either Powershell or CMD and entering `npm install -g @angular/cli`
 4) In either Powershell or CMD, cd to `{ProjectLocation}/src/MarsRoverCodingExercise.SPA`
 5) With the current directory set to the Angular project, restore the project dependencies by typing command `npm i` and pressing enter
-6) Once the npm indicates that all packages are installed, run the SPA by entering command `ng serve`
+6) Once the npm indicates that all packages are installed, run the SPA by entering command `npm ng serve`
 7) Once the terminal indicates that all resources are built, open your favorate web browser and navigate to `localhost:4200`
 8) follow the on-screen instruction
 
