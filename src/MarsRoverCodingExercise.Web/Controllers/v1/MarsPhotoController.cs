@@ -1,5 +1,6 @@
-﻿using MarsRoverCodingExercise.Core.Models;
-using MarsRoverCodingExercise.Web.Interfaces;
+﻿using MarsRoverCodingExercise.Core.Interfaces;
+using MarsRoverCodingExercise.Core.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -15,14 +16,17 @@ namespace MarsRoverCodingExercise.Web.Controllers.v1
     public class MarsPhotoController : ControllerBase
     {
         private readonly IMarsPhotoService _marsPhotoService;
+        private readonly IWebHostEnvironment _env;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MarsPhotoController"/> class
         /// </summary>
         /// <param name="marsPhotoService"></param>
-        public MarsPhotoController(IMarsPhotoService marsPhotoService)
+        /// <param name="env"></param>
+        public MarsPhotoController(IMarsPhotoService marsPhotoService, IWebHostEnvironment env)
         {
             _marsPhotoService = marsPhotoService;
+            _env = env;
         }
 
         /// <summary>
@@ -42,7 +46,7 @@ namespace MarsRoverCodingExercise.Web.Controllers.v1
             {
                 // Get the response from our service
                 var serviceResponse = 
-                    await _marsPhotoService.GetMarsImagesByRoverName(roverName).ConfigureAwait(false);
+                    await _marsPhotoService.GetMarsImagesByRoverName(roverName, _env.WebRootPath).ConfigureAwait(false);
 
                 return Ok(serviceResponse);
             }
